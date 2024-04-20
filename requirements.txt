@@ -1,0 +1,7 @@
+pandas
+streamlit
+openpyxl
+beautifulsoup4
+pathlib
+streamlit-analytics
+
