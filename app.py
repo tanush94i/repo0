@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 st.set_page_config(
-    page_title="Second Semester External Practicals Section K to X", layout="centered"
+    page_title="Second Semester External Practicals Section C to X", layout="centered"
 )
 
 
@@ -55,7 +55,7 @@ def main():
     student_data_path = "c to x.csv"  # Update with your data file path
     timetable_data_path = None
 
-    st.subheader("Second Semester External Practicals Section K to X")
+    st.subheader("Second Semester External Practicals Section C to X")
     erp_id = st.text_input("Enter your ERP ID:")
 
     if erp_id:
