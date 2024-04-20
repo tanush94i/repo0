@@ -52,7 +52,7 @@ def find_timetable_file(batch):
 
 
 def main():
-    student_data_path = "data.csv"  # Update with your data file path
+    student_data_path = "c to x.csv"  # Update with your data file path
     timetable_data_path = None
 
     st.subheader("Second Semester External Practicals Section K to X")
