@@ -1,9 +1,11 @@
 import streamlit as st
 import pandas as pd
 import os
+import numpy as np  # Import NumPy for efficient string conversion
 
 st.set_page_config(
-    page_title="Second Semester External Practicals Section C to X", layout="centered"
+    page_title="Second Semester External Practicals Section C to X",
+    layout="centered"
 )
 
 
@@ -39,7 +41,12 @@ def format_date_column(dataframe, date_column="Date"):
 def display_timetable(timetable):
     if not timetable.empty:
         st.subheader("Timetable")
-        st.dataframe(timetable, width=1000)  # Consider lazy loading if data is large
+
+        # Apply formatting to numeric columns before displaying
+        for col in timetable.select_dtypes(include=[np.number]):  # Identify numeric columns
+            timetable[col] = timetable[col].astype(str).str.replace(",", "")  # Remove commas, cast to string
+
+        st.dataframe(timetable, width=1000)  # Consider lazy loading if data is large (optional)
     else:
         st.write("Timetable data not available.")
 
